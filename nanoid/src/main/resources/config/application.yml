@@ -1,3 +1,5 @@
 spring:
   application:
     name: NanoID
+  profiles:
+    active: dev

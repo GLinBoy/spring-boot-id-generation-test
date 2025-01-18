@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: Java UUID
+  profiles:
+    active: dev

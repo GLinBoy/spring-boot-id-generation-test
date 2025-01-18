@@ -1,3 +1,5 @@
 spring:
   application:
     name: Long ID
+  profiles:
+    active: dev
