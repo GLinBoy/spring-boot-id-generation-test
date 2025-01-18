@@ -1,0 +1,8 @@
+server:
+  port: 8080
+  error:
+    include-stacktrace: ON_PARAM
+spring:
+  config:
+    activate:
+      on-profile: dev
