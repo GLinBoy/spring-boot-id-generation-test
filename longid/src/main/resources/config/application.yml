@@ -3,3 +3,13 @@ spring:
     name: Long ID
   profiles:
     active: dev
+  datasource:
+    hikari:
+      pool-name: HikariPool - ${spring.application.name}
+      maximum-pool-size: 17
+      minimum-idle: 10
+      idle-timeout: 30000
+      connection-timeout: 3000
+      max-lifetime: 1800000
+      validation-timeout: 2000
+      register-mbeans: true
