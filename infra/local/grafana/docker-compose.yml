@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  grafana:
+    container_name: grafana
+    image: grafana/grafana:11.4.0
+    ports:
+      - '3000:3000'
+    extra_hosts:
+      - 'host.docker.internal:host-gateway'
+    volumes:
+      - ./datasources:/etc/grafana/provisioning/datasources:ro
+      - ./dashboards/provider:/etc/grafana/provisioning/dashboards:ro
+      - ./dashboards/json-exports:/var/lib/grafana/dashboards:ro
+    environment:
+      - GF_SECURITY_ADMIN_USER=${ADMIN_USER:-admin}
+      - GF_SECURITY_ADMIN_PASSWORD=${ADMIN_PASSWORD:-admin}
+      - GF_USERS_ALLOW_SIGN_UP=false
