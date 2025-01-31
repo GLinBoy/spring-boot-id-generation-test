@@ -1,0 +1,13 @@
+version: "3.8"
+services:
+  postgresql:
+    container_name: postgresql
+    image: postgres:17.2-alpine3.21
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: 1
+    ports:
+      - "5432:5432"
+    volumes:
+        - ./init-scripts:/docker-entrypoint-initdb.d
+
