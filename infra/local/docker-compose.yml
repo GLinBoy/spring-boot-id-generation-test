@@ -1,0 +1,32 @@
+version: '3.8'
+name: ID Generation
+services:
+  postgresql-local:
+    container_name: idg-postgresql-local-container
+    extends:
+      file: postgresql/docker-compose.yml
+      service: postgresql
+    networks:
+      - id-generation-network
+
+  prometheus-local:
+    container_name: idg-prometheus-local-container
+    extends:
+      file: prometheus/docker-compose.yml
+      service: prometheus
+    networks:
+      - id-generation-network
+
+  grafana-local:
+    container_name: idg-grafana-local-container
+    extends:
+      file: grafana/docker-compose.yml
+      service: grafana
+    networks:
+      - id-generation-network
+    depends_on:
+      - prometheus-local
+
+networks:
+  id-generation-network:
+    driver: bridge
