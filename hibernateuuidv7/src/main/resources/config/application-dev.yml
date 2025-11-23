@@ -18,7 +18,7 @@ spring:
       ddl-auto: create-drop
   sql:
     init:
-        platform: h2
+      platform: h2
 
 management:
   endpoints:
