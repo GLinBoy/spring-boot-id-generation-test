@@ -31,7 +31,7 @@
         <maven.compiler.proc>full</maven.compiler.proc>
         <editorconfig.version>0.2.0</editorconfig.version>
         <modelmapper.version>3.2.6</modelmapper.version>
-        <springdoc.version>3.0.0</springdoc.version>
+        <springdoc.version>3.0.3</springdoc.version>
         <jnanoid-enhanced.version>main-SNAPSHOT</jnanoid-enhanced.version>
     </properties>
     <repositories>
